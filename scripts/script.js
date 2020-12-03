@@ -6,15 +6,7 @@ async function getData() { // fetch
     const beerPromise = await fetch(urlAPI);
     const beers = await beerPromise.json();
 
-
-    // content.innerHTML = `
-    // <div class="beer-card">
-    //     <h3 class="beer-title">${beers[0].name}</h3>
-    //     <img class="beer-img" src=${beers[0].image_url}>
-    // </div>
-    // `
     console.log(beers[0])
-    // let str = '';
     beers.forEach(b => {
         content.innerHTML += `
         <div class="beer-card">
@@ -44,6 +36,5 @@ async function getData() { // fetch
         `;
     })
 
-    //    content.innerHTML = str ;
     console.log(beers)
 }
