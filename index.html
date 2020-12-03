@@ -21,7 +21,7 @@
                 <div class="filter-section">
                     <p class="filter-title">Alcohol Vol (ABV):</p>
                     <div class="filter-container">
-                        <form class="filter-ABV">
+                        <form id="filter-ABV" class="filter-ABV">
                             <label for='abvAll'>
                                 <input type="radio" name="filter-abv" id="abvAll" value="all" checked>
                                 <span>All</span>
@@ -150,7 +150,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="filter-card">
                 <div class="filter-section">
                     <p class="filter-title">Hoppiness (IBU):</p>
@@ -298,10 +297,25 @@
 
         <section class="contents">
 
-        </section>
+        </section> 
 
         <section class="pagination">
+            <button id="prev">
+                <svg width="320" height="512" viewBox="0 0 320 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M34.5241 239.03L228.868 44.687C238.241 35.314 253.437 35.314 262.809 44.687L285.476 67.354C294.833 76.711 294.851 91.876 285.516 101.255L131.495 256.001L285.516 410.746C294.851 420.125 294.833 435.29 285.476 444.647L262.809 467.314C253.436 476.687 238.24 476.687 228.868 467.314L34.5251 272.971C25.1521 263.599 25.1521 248.403 34.5241 239.03Z" fill="black"/>
+</svg>
 
+                    
+                                      
+            </button>
+            <p id="page_id">1</p>
+            <button id="next">
+                <svg width="320" height="512" viewBox="0 0 320 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M285.476 272.971L91.132 467.314C81.759 476.687 66.563 476.687 57.191 467.314L34.524 444.647C25.167 435.29 25.149 420.125 34.484 410.746L188.505 256L34.484 101.255C25.149 91.876 25.167 76.711 34.524 67.354L57.191 44.687C66.564 35.314 81.76 35.314 91.132 44.687L285.475 239.03C294.848 248.402 294.848 263.598 285.476 272.971Z" fill="black"/>
+                    </svg>
+                    
+            </button>
+            
         </section>
     </main>
 

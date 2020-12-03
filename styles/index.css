@@ -51,7 +51,7 @@ section {
 .filter-section .filter-title {
   line-height: 1.1rem;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 6 00;
   text-transform: uppercase;
   margin: 0.4em;
   text-align: center; }
@@ -82,14 +82,12 @@ section {
   -webkit-transform: scale(1.5);
   transform: scale(1.5); }
 
-.filter-section input + span,
-.filter-section input + svg {
+.filter-section input + svg,
+.filter-section input + span {
+  cursor: pointer;
   font-size: 1.5rem;
   color: #fff;
   transition: all 0.3s ease; }
-
-.filter-section input {
-  cursor: pointer; }
 
 .filter-section svg {
   height: 1.5rem;
@@ -114,7 +112,8 @@ section {
 .filter-section #keg-filter:checked + span,
 .filter-section #keg-filter:focus + span {
   color: #efa106;
-  font-size: 1.7rem; }
+  font-size: 1.7rem;
+  text-shadow: 2px 0px 1px black; }
 
 .filter-section .beerGlass:hover + svg,
 .filter-section .beerGlass:checked + svg,
@@ -200,3 +199,25 @@ section {
   transform: rotateY(180deg); }
   .beer-card:hover .beer-card--inner .beer-card--front {
     opacity: 0; }
+
+.pagination {
+  display: flex;
+  justify-content: center; }
+  .pagination button {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none; }
+    .pagination button svg {
+      width: 100%;
+      height: 100%; }
+  .pagination #next:hover,
+  .pagination #prev:hover {
+    transform: scale(1.2); }
+  .pagination #page_id {
+    margin: 0;
+    font-size: 25px;
+    line-height: 30px;
+    width: 40px;
+    height: 40px;
+    text-align: center; }
