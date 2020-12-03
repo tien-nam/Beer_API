@@ -15,18 +15,34 @@ $filter-size: 1rem;
 $beer-color: #efa106;
 $filter-bg: rgb(41, 57, 70);
 
+$bg : #daeffc;
+
+@mixin card-neumophism {
+  background:$bg;
+box-shadow: inset 8px 8px 16px #aebfca, 
+            inset -8px -8px 16px #ffffff;
+}
+
+@mixin filter-neumophism{
+  background: #ffffff;
+box-shadow:  3px 3px 6px #646566, 
+             -3px -3px 6px #ffffff;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: "Texturina", serif;
+  //background: $bg;
 }
 
 header {
   font-size: $font-size-small;
   background: $bg-color;
   text-align: center;
-  padding: 0.2em;
+  padding: 1em;
+  font-size: 3rem;
   color: #fff;
 }
 
@@ -34,19 +50,31 @@ section {
   margin: 2rem;
 }
 
-.filters {
-  display: flex;
-  flex-direction: column;
+.contents{
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-gap: 10px;
+
+  width: 90%;
+}
+
+.filters{
+  padding:1em;
+  margin: 0 auto;
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .filter-card {
-  border: 1px solid black;
   display: flex;
   justify-content: center;
   margin: 0 auto;
   font-size: 1rem;
   padding: 0.5em;
   width: 300px;
+  @include filter-neumophism();
 }
 
 .filter-section {
@@ -81,14 +109,22 @@ section {
   input[type="radio"] {
     position: absolute;
     opacity: 0;
+    width: 10px;
+    height: 20px;
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
   }
 
   input + span,
   input + svg {
-    cursor: pointer;
     font-size: $filter-size * 1.5;
     color: #fff;
     transition: all 0.3s ease;
+  }
+
+  input {
+    cursor: pointer;
   }
 
   svg {
@@ -101,7 +137,6 @@ section {
     }
   }
 
-
   #abvAll:hover + span,
   #abvAll:checked + span,
   #abvAll:focus + span,
@@ -110,27 +145,23 @@ section {
   #ibuAll:focus + span,
   #phAll:hover + span,
   #phAll:checked + span,
-  #phAll:focus + span
-  #regular-filter:hover + span,
+  #phAll:focus + span,
+   #regular-filter:hover + span,
   #regular-filter:checked + span,
   #regular-filter:focus + span,
   #keg-filter:hover + span,
   #keg-filter:checked + span,
-  #keg-filter:focus + span,
-   {
+  #keg-filter:focus + span {
     color: $beer-color;
     font-size: $filter-size * 1.7;
   }
 
-  .beerGlass:hover,
+  .beerGlass:hover + svg,
   .beerGlass:checked + svg,
-  .beerGlass:focus + svg,
-  .hops:hover,
   .hops:checked + svg,
-  .hops:focus + svg,
-  .pHs:hover,
-  .pHs:checked + svg,
-  .pHs:focus + svg {
+  .hops:hover + svg,
+  .pHs:hover + svg,
+  .pHs:checked + svg {
     fill: $beer-color;
     transform: scale(1.5);
   }
@@ -142,16 +173,7 @@ section {
   }
 }
 
-.contents,
-.filters {
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 1rem;
-  justify-items: center;
-  width: 90%;
-  // border: 1px solid black;
-}
+
 
 .beer-card {
   background-color: transparent;
@@ -159,6 +181,7 @@ section {
   height: 600px;
   perspective: 1000px;
   margin: 1rem;
+  @include filter-neumophism();
 
   .beer-card--inner {
     position: relative;
@@ -185,24 +208,24 @@ section {
 
   .beer-card--front {
     .beer__img {
-      border: 1px solid black;
       width: 80%;
       height: 350px;
       object-fit: contain;
       margin: 0 auto;
+      @include card-neumophism();
     }
-  
+
     .beer__name {
       text-align: left;
       height: 60px;
       font-size: 1rem;
       margin: 10px;
-      border-bottom: 2px solid #000000;
+     //border-bottom: 2px solid #000000;
     }
     .beer__tagline {
       text-align: left;
     }
-  
+
     .beer__info {
       display: flex;
       justify-content: space-between;
@@ -216,12 +239,12 @@ section {
       text-align: left;
       margin: 0;
     }
-  
+
     .beer__title {
       margin: 0 0 5px 0;
       border-bottom: 1px solid black;
     }
-  
+
     .beer__title:before {
       content: "";
       top: 0;
@@ -230,7 +253,7 @@ section {
       position: absolute;
       height: 8px;
       width: 300px;
-  
+
       background: #d72d2d7b;
       z-index: -1;
     }
@@ -248,4 +271,3 @@ section {
     opacity: 0;
   }
 }
-
